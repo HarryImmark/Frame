@@ -111,7 +111,6 @@ public class WebDriverJoom_Test extends commonConditions
     @Test(priority = 8)
     public void indexCheck ()
     {
-       // User testUser = UserCreator.withCredentialsFromProperty();
         int IndexErr = new productPage(driver)
                 .closeSpam(URL2)
                 .openPayPage()
@@ -122,13 +121,4 @@ public class WebDriverJoom_Test extends commonConditions
         Assert.assertEquals(IndexErr, 1);
     }
 
-/*    @Test
-    public void sortHight()
-    {
-        String sort = new mainPage(driver)
-                .openMainPage(URL3)
-                .inputData(testSearchItem)
-                .inputTypeSort()
-    }
-*/
 }

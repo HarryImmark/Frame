@@ -25,8 +25,6 @@ public class basketPage {
 
     public basketPage deleteFromBasket()
     {
-        //WebElement GoToBasket = driver.findElement(OpenBasketLocator);
-        //GoToBasket.click();
         WebElement DeleteItemButton = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(deleteItemInBasketButtonLocator));
         DeleteItemButton.click();
