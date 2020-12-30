@@ -30,13 +30,17 @@ public class DriverSingleton {
                 }
             }
             //WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            //driver = new ChromeDriver();
+
             driver.manage().window().maximize();
 
         }
         return driver;
     }
 
+    public static void deleteAllCookies(){
+        driver.manage().deleteAllCookies();
+    }
     public static void closeDriver(){
         driver.quit();
         driver = null;
