@@ -23,7 +23,7 @@ public class WebDriverJoom_Test extends commonConditions
     private static final String testSearchItem = "куртка";
 
 
-    @Test
+    @Test(priority = 1)
     public void checkEmptyBasket ()
     {
         int SearchProductsInBasket = new productPage(driver)
@@ -35,7 +35,7 @@ public class WebDriverJoom_Test extends commonConditions
         Assert.assertTrue(SearchProductsInBasket == 0,"Basket not empty");
     }
 
-    @Test
+    @Test(priority = 2)
     public void checkBuyWithoutColor ()
     {
          int checkForExeption = new productPage(driver)
@@ -45,7 +45,7 @@ public class WebDriverJoom_Test extends commonConditions
          Assert.assertTrue(checkForExeption > 0,"The item was delete from basket");
     }
 
-    @Test
+    @Test(priority = 3)
     public void AddFavorite()
     {
       int addFavorite = new productPage(driver)
@@ -56,7 +56,7 @@ public class WebDriverJoom_Test extends commonConditions
       Assert.assertEquals(addFavorite, 1);
     }
 
-    @Test
+    @Test(priority = 4)
     public void WrongCode()
     {
         Promocode testCode = PromocodeCreator.withCredentialsCode();
@@ -69,7 +69,7 @@ public class WebDriverJoom_Test extends commonConditions
         Assert.assertEquals(WarningAfter, 1);
     }
 
-    @Test
+    @Test(priority = 5)
     public void LoginTest()
     {
         User testUser = UserCreator.withCredentialsFromProperty();
@@ -81,7 +81,7 @@ public class WebDriverJoom_Test extends commonConditions
         Assert.assertEquals(LoginTest, 0);
     }
 
-    @Test
+    @Test(priority = 6)
     public void CardTest()
     {
         User testUser = UserCreator.withCredentialsFromProperty();
@@ -97,7 +97,7 @@ public class WebDriverJoom_Test extends commonConditions
         Assert.assertEquals(TestIndex, 1);
     }
 
-    @Test
+    @Test(priority = 7)
     public void SearchTest()
     {
         int zeroItemsTrigger = new mainPage(driver)
@@ -108,7 +108,7 @@ public class WebDriverJoom_Test extends commonConditions
     }
 
 
-    @Test
+    @Test(priority = 8)
     public void indexCheck ()
     {
         User testUser = UserCreator.withCredentialsFromProperty();
