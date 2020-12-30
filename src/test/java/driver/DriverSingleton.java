@@ -29,9 +29,6 @@ public class DriverSingleton {
                     driver = new ChromeDriver();
                 }
             }
-            //WebDriverManager.chromedriver().setup();
-            //driver = new ChromeDriver();
-
             driver.manage().window().maximize();
 
         }

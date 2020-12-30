@@ -114,8 +114,6 @@ public class WebDriverJoom_Test extends commonConditions
         User testUser = UserCreator.withCredentialsFromProperty();
         int IndexErr = new productPage(driver)
                 .closeSpam(URL2)
-                .signIn()
-                .inputDataUser(testUser)
                 .openPayPage()
                 .openAdress()
                 .editAdress()

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -39,16 +38,16 @@ public productPage(WebDriver  driver)
 public productPage closeSpam(String URL)
 {
     driver.get(URL);
-    //WebElement SearchSpam = (new WebDriverWait(driver, 100))
-    //        .until(ExpectedConditions.presenceOfElementLocated(spamLocator));
-    //SearchSpam.click();
-    //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+   // WebElement SearchSpam = (new WebDriverWait(driver, 15))
+   //        .until(ExpectedConditions.presenceOfElementLocated(spamLocator));
+   // SearchSpam.click();
     return this;
 }
 
 public productPage addProduct()
 {
-    WebElement ButtonAdd = driver.findElement(buttonAddLocator);
+    WebElement ButtonAdd  = (new WebDriverWait(driver, 10))
+            .until(ExpectedConditions.presenceOfElementLocated(buttonAddLocator));
     new WebDriverWait(driver,25).until(ExpectedConditions.elementToBeClickable(buttonAddLocator));
     ButtonAdd.click();
     return this;
@@ -70,11 +69,12 @@ public int checkExepion()
 
 public basketPage openBasket()
 {
-    try {
+    /*try {
         Thread.sleep(5000);
     } catch (InterruptedException e) {
         e.printStackTrace();
-    }
+    }*/
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     WebElement GoToBasket = (new WebDriverWait(driver, 10))
             .until(ExpectedConditions.presenceOfElementLocated(buttonOpenBasketLocator));
     GoToBasket.click();
@@ -82,11 +82,11 @@ public basketPage openBasket()
 }
 public productPage signIn()
 {
-    WebElement siginButton = driver.findElement(buttonSigin);
+    WebElement siginButton = (new WebDriverWait(driver, 10))
+            .until(ExpectedConditions.presenceOfElementLocated(buttonSigin));
     siginButton.click();
     WebElement mailButton = (new WebDriverWait(driver, 10))
             .until(ExpectedConditions.presenceOfElementLocated(loginMail));
-    //WebElement mailButton = driver.findElement(loginMail);
     mailButton.click();
     WebElement confirmButton = driver.findElement(enterMail);
     confirmButton.click();
@@ -99,7 +99,8 @@ WebElement login = driver.findElement(loginSigin);
 login.sendKeys(user.getUsername());
 WebElement password = driver.findElement(passwordSigin);
 password.sendKeys(user.getPassword());
-WebElement enter = driver.findElement(enterButton);
+WebElement enter = (new WebDriverWait(driver, 60))
+            .until(ExpectedConditions.presenceOfElementLocated(enterButton));
 enter.click();
 WebElement sideBar = driver.findElement(By.xpath("//*[@class='content___ZmMAf narrowPopupContent___38WAx']"));
 new WebDriverWait(driver,10).until(ExpectedConditions.invisibilityOf(sideBar));
@@ -128,13 +129,11 @@ public productPage  closeLogin()
 
     public  payPage openPayPage()
     {
-        WebElement buy = driver.findElement(buttonBuy);
-        //WebElement buy = (new WebDriverWait(driver, 60))
-        //       .until(ExpectedConditions.presenceOfElementLocated(buttonBuy));
+        WebElement buy = (new WebDriverWait(driver, 60))
+               .until(ExpectedConditions.presenceOfElementLocated(buttonBuy));
         buy.click();
         WebElement payPage = (new WebDriverWait(driver, 60))
                 .until(ExpectedConditions.presenceOfElementLocated(buttonPay));
-        //WebElement payPage = driver.findElement(buttonPay);
         payPage.click();
         return new payPage (driver);
     }

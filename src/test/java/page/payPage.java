@@ -50,8 +50,6 @@ public class payPage
         WebElement card = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.presenceOfElementLocated(cardChoose));
         card.click();
-      //  new WebDriverWait(driver, 15)
-      //          .until(ExpectedConditions.elementToBeClickable(numberString));
         return this;
     }
 
