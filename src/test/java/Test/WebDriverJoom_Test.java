@@ -124,7 +124,7 @@ public class WebDriverJoom_Test extends commonConditions
         Assert.assertEquals(IndexErr, 1);
     }
 
-    @Test
+/*    @Test
     public void sortHight()
     {
         String sort = new mainPage(driver)
@@ -132,5 +132,5 @@ public class WebDriverJoom_Test extends commonConditions
                 .inputData(testSearchItem)
                 .inputTypeSort()
     }
-
+*/
 }

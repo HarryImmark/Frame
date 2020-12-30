@@ -46,7 +46,7 @@ public class mainPage
 
     public mainPage inputTypeSort()
     {
-        
+
         return this;
     }
 }
