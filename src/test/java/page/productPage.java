@@ -69,11 +69,6 @@ public int checkExepion()
 
 public basketPage openBasket()
 {
-    /*try {
-        Thread.sleep(5000);
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }*/
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     WebElement GoToBasket = (new WebDriverWait(driver, 10))
             .until(ExpectedConditions.presenceOfElementLocated(buttonOpenBasketLocator));
