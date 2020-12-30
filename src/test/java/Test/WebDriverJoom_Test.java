@@ -111,7 +111,7 @@ public class WebDriverJoom_Test extends commonConditions
     @Test(priority = 8)
     public void indexCheck ()
     {
-        User testUser = UserCreator.withCredentialsFromProperty();
+       // User testUser = UserCreator.withCredentialsFromProperty();
         int IndexErr = new productPage(driver)
                 .closeSpam(URL2)
                 .openPayPage()
