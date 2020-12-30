@@ -39,10 +39,10 @@ public productPage(WebDriver  driver)
 public productPage closeSpam(String URL)
 {
     driver.get(URL);
-    WebElement SearchSpam = (new WebDriverWait(driver, 100))
-            .until(ExpectedConditions.presenceOfElementLocated(spamLocator));
-    SearchSpam.click();
-    driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+    //WebElement SearchSpam = (new WebDriverWait(driver, 100))
+    //        .until(ExpectedConditions.presenceOfElementLocated(spamLocator));
+    //SearchSpam.click();
+    //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
     return this;
 }
 
